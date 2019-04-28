@@ -26,6 +26,13 @@ public class Array<E> {
 		data = (E[]) new Object[10];//强制类型转化
 		size = 0;
 	}
+	public Array(E []arr) {
+		data = (E []) new Object[arr.length];
+		for(int i = 0; i < arr.length; i++) {
+			data[i] = arr[i];
+			size = arr.length;
+		}
+	}
 	
 	//实现动态数组
 	private void resize(int newcapacity) {
