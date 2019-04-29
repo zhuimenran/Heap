@@ -16,8 +16,10 @@ public class MaxHeap<E extends Comparable<E>> {
 		data = new Array<E>();
 	}
 	
+	//heapify,将任意数组组成堆的形状
 	public MaxHeap(E []list) {
 		data = new Array<E>(list);//将数组装入堆数组中
+		//将从倒数第一个非叶子节点到第一个节点进行下沉操作
 		for(int i = parent(list.length-1); i >=0; i--) {
 			siftDown(i);
 		}
@@ -48,11 +50,7 @@ public class MaxHeap<E extends Comparable<E>> {
 		return ret;
 	}
 	
-	//heapify,将任意数组组成堆的形状
-	public void heapify(E []list) {
-		//将从倒数第一个非叶子节点到第一个节点进行下沉操作
-		
-	}
+	
 	
 	
 	//返回完全二叉树的数组表示中，所给索引所表示的元素的父节点的索引
