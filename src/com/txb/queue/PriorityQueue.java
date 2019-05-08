@@ -16,6 +16,7 @@ public class PriorityQueue <E extends Comparable<E>> implements Queue<E>{
 		heap = new MaxHeap<>();
 	}
 	
+	//入队
 	@Override
 	public void enqueue(E e) {
 		heap.add(e);
@@ -33,12 +34,13 @@ public class PriorityQueue <E extends Comparable<E>> implements Queue<E>{
 	}
 
 	
-
+//出队
 	@Override
 	public E dequeue() {
 		return heap.extractMax();
 	}
 
+	//最大值
 	@Override
 	public E getFront() {
 		

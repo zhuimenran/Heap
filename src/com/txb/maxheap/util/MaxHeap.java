@@ -1,7 +1,17 @@
 package com.txb.maxheap.util;
 /**
  * 用数组实现最大堆
- * @author 13125
+// * 堆（数据结构）：堆可以被看成是一棵树，如：堆排序；
+//
+//　　栈（数据结构）：一种先进后出的数据结构
+//http://blog.csdn.net/genios/article/details/8157031
+//
+//最大堆和最小堆是二叉堆的两种形式。
+//
+//最大堆：根结点的键值是所有堆结点键值中最大者，且每个结点的值都比其孩子的值大。
+//
+//最小堆：根结点的键值是所有堆结点键值中最小者，且每个结点的值都比其孩子的值小。
+// * @author 13125
  *
  */
 public class MaxHeap<E extends Comparable<E>> {
@@ -15,6 +25,24 @@ public class MaxHeap<E extends Comparable<E>> {
 	public MaxHeap() {
 		data = new Array<E>();
 	}
+	
+//	生成最大堆：最大堆通常都是一棵完全二叉树，因此我们使用数组的形式来存储最大堆的值，从1号单元开始存储，
+	//因此父结点跟子结点的关系就是两倍的关系。
+//
+//	即：heap[father * 2] = heap[leftChild];  heap[father * 2 + 1] = heap[rightChild];
+//
+//	 
+//
+//	最大堆的初始化
+//
+//	在生成最大堆时，我们可以采取一次次遍历整棵树找到最大的结点放到相应的位置中。
+//
+//	但是这种方法有个不好的地方，就是每个结点都要重复比较多次。
+//
+//	所以我们可以换一种思考的顺序，从下往上进行比较。先找到最后一个有子结点的结点，先让他的两
+	//个子结点进行比较，找到大的值
+	//再和父结点的值进行比较。如果父结点的
+//	值小，则子结点和父结点进行交换，交换之后再往下比较。然后一步步递归上去，知道所在结点的位置是0号位置跳出。这样就可以有效地减少比较所用到的时间。
 	
 	//heapify,将任意数组组成堆的形状
 	public MaxHeap(E []list) {
@@ -81,7 +109,7 @@ public class MaxHeap<E extends Comparable<E>> {
 			siftUp(data.getSize()-1);//上浮元素的索引
 		}
 		
-		//上浮节点
+		//上浮节点，节点比父节点的值大，就上浮（只要子节点大于父节点，交换之后就能保证父节点大于子节点
 		private void siftUp(int k) {
 			while(k>0 && data.get(parent(k)).compareTo(data.get(k))<0) {
 				data.swap(k,parent(k));
