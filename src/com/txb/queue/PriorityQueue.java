@@ -3,7 +3,8 @@ package com.txb.queue;
 import com.txb.maxheap.util.MaxHeap;
 
 /**
- * 用最大堆实现优先队列
+ * 优先队列出队时等级最高的出队，而最大堆的root为最大值
+ * 用最大堆实现优先队列，比较容易实现，最大堆是用数组实现的。最重要的是上浮与下沉操作
  * @author 13125
  *
  * @param <E>
