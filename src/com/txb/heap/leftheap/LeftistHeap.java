@@ -2,9 +2,7 @@ package com.txb.heap.leftheap;
 
 /**
  * Java 语言: 左倾堆
- *
- * @author skywang
- * @date 2014/03/31
+ *与最小堆类似，根节点是最小值。
  */
 
 
@@ -44,7 +42,7 @@ public class LeftistHeap<T extends Comparable<T>> {
 			preOrder(heap.right);
 		}
 	}
-
+//前序遍历的接口
 	public void preOrder() {
 		preOrder(mRoot);
 	}
@@ -59,7 +57,7 @@ public class LeftistHeap<T extends Comparable<T>> {
 			inOrder(heap.right);
 		}
 	}
-
+//中序遍历的接口
 	public void inOrder() {
 		inOrder(mRoot);
 	}
@@ -75,7 +73,7 @@ public class LeftistHeap<T extends Comparable<T>> {
 			System.out.print(heap.key+" ");
 		}
 	}
-
+//后续遍历的接口
 	public void postOrder() {
 		postOrder(mRoot);
 	}
@@ -113,6 +111,7 @@ public class LeftistHeap<T extends Comparable<T>> {
         return x;
     }
 
+    //合并树的接口
     public void merge(LeftistHeap<T> other) {
         this.mRoot = merge(this.mRoot, other.mRoot);
     }
