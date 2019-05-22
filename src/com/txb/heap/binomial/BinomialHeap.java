@@ -3,8 +3,7 @@ package com.txb.heap.binomial;
 /**
  * Java 语言: 二项堆
  *
- * @author skywang
- * @date 2014/04/03
+ *
  */
 
 public class BinomialHeap<T extends Comparable<T>> {
