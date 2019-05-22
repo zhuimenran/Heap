@@ -3,8 +3,6 @@ package com.txb.heap.skewheap;
 /**
  * Java 语言: 斜堆
  *
- * @author skywang
- * @date 2014/03/31
  */
 
 public class SkewHeap<T extends Comparable<T>> {
